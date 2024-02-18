@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 100%;
+            height: auto;
+            background-color: red;
+        }
+        .tabs{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #dadada;
+        }
+        .div{
+        padding: 10px;
+        background:transparent;
+        color: black;
+        cursor: pointer;
+        margin: 20px;
+        }
+        .div:hover{
+            color: white;
+            background: black;
+        }
+        h3{
+            width: 50%;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="home div">Home</div>
+            <div class="about div">About</div>
+            <div class="contact div">Contact</div>
+        </div>
+        <h3 id="homeText" >
+           Home => Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum ad blanditiis omnis repellendus, animi voluptatibus placeat? Unde earum magnam maiores alias, nam odit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel error ut, reiciendis tempore architecto praesentium a eaque mollitia sit doloremque, in quisquam autem maiores eligendi. Vitae in ea eveniet id.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, neque tempora. Facere soluta ipsa quaerat id, reiciendis perspiciatis odit, ratione impedit tempore iure magnam inventore aspernatur rem quasi. Delectus, blanditiis?
+        </h3>
+        <h3 id="aboutText" >
+           About => Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi cum tempora, beatae voluptatibus quibusdam quod eius repudiandae saepe temporibus minima cumque excepturi necessitatibus exercitationem sapiente eveniet itaque hic error! Tempora sit voluptate libero laboriosam, natus voluptatem praesentium, dolorem adipisci totam quod similique. Delectus perspiciatis labore doloremque aut ut aperiam beatae officiis exercitationem rerum fuga eveniet in, quasi, optio placeat! Vero ullam incidunt at eligendi expedita doloribus officiis iure ratione inventore ea corrupti repellat veritatis aperiam tempore architecto ipsum impedit ad, dolore corporis. Voluptatem quisquam ad, non molestiae, numquam amet incidunt necessitatibus illo iusto, accusantium tempora distinctio? Mollitia harum esse consequuntur!
+        </h3>
+        <h3 id="contactText">
+         Contact => Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore tenetur iste deserunt atque maiores aperiam. Ipsa veritatis, obcaecati, nesciunt deleniti omnis laboriosam vitae voluptatibus iste dolorum provident maiores, et a eius officia ipsam eum minus dignissimos laudantium nihil illo consequatur ut nemo blanditiis! Ullam, ea.
+        </h3>
+    </div>
+
+
+
+    <script>
+        let home = document.querySelector(".home");
+        let about = document.querySelector(".about");
+        let contact = document.querySelector(".contact");
+
+        let homeText = document.getElementById("homeText");
+        let aboutText = document.getElementById("aboutText");
+        let contactText = document.getElementById("contactText");
+
+        homeText.style.display = "block";
+
+
+        home.addEventListener("click",()=>{
+            hideAll();
+            homeText.style.display = "block";
+        })
+
+        about.addEventListener("click",()=>{
+            hideAll();
+            aboutText.style.display = "block";
+        })
+
+        contact.addEventListener("click",()=>{
+            hideAll();
+            contactText.style.display = "block";
+        })
+
+        function hideAll(){
+           let allH3 = document.querySelectorAll("h3");
+            console.log(allH3);
+            allH3.forEach((h3)=>{   
+                h3.style.display = "none"
+            })
+        }
+
+        
+
+
+    </script>
+
+</body>
+</html>
